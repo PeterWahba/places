@@ -13,7 +13,6 @@ export class OfferBookingsPage implements OnInit {
   offer: Offer;
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private navCtrl: NavController,
     private placesService: PlacesService,
 
@@ -26,13 +25,6 @@ export class OfferBookingsPage implements OnInit {
         return;
       }
       this.offer = this.placesService.getOffer(pramMap.get('placeId'));
-      console.log(pramMap.get('placeId'));
-
     });
-  }
-
-  onBookPlace() {
-    // this.router.navigateByUrl('places/tabs/discover')
-    this.navCtrl.navigateBack('places/tabs/offers');
   }
 }
